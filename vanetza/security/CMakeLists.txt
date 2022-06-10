@@ -64,4 +64,12 @@ if(TARGET OpenSSL::Crypto)
     endif()
 endif()
 
+if(TARGET Botan::Botan)
+    set_property(TARGET security APPEND PROPERTY
+        SOURCES backend_botan.cpp)
+    target_link_libraries(security PUBLIC Botan::Botan)
+    target_compile_definitions(security PUBLIC "VANETZA_WITH_BOTAN")
+endif()
+
+
 add_test_subdirectory(tests)

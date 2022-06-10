@@ -11,7 +11,14 @@
             "buildCommandArgs": "",
             "ctestCommandArgs": "",
             "inheritEnvironments": [ "linux_x64" ],
-            "wslPath": "Ubuntu-20.04"
+            "wslPath": "Ubuntu-20.04",
+            "variables": [
+                {
+                    "name": "VANETZA_WITH_BOTAN",
+                    "value": "True",
+                    "type": "BOOL"
+                }
+            ]
         }
     ]
 }

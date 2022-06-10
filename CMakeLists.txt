@@ -69,6 +69,11 @@ if (VANETZA_WITH_OPENSSL)
   include(CompatOpenSSLTargets)
 endif()
 
+option(VANETZA_WITH_BOTAN "Enable usage of Botan cryptographic library" OFF)
+if (VANETZA_WITH_BOTAN)
+  find_package(Botan REQUIRED)
+endif()
+
 add_subdirectory(vanetza/access)
 add_subdirectory(vanetza/asn1)
 add_subdirectory(vanetza/btp)

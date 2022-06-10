@@ -41,6 +41,11 @@ VANETZA_REGISTER_CRYPTO_BACKEND(BackendNull)
     VANETZA_REGISTER_CRYPTO_BACKEND(BackendOpenSsl)
 #endif
 
+#ifdef VANETZA_WITH_BOTAN
+#   include <vanetza/security/backend_botan.hpp>
+  VANETZA_REGISTER_CRYPTO_BACKEND(BackendBotan)
+#endif
+
 namespace vanetza
 {
 namespace security
